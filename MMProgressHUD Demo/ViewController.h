@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIButton *showHUDButton;
+
+- (IBAction)showHUDButtonAction:(id)sender;
+
 @end

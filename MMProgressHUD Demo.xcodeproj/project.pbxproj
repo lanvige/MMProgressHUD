@@ -18,8 +18,11 @@
 		381128D017A021AF001D19A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 381128CF17A021AF001D19A1 /* Default-568h@2x.png */; };
 		381128D317A021AF001D19A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381128D217A021AF001D19A1 /* ViewController.m */; };
 		381128D617A021AF001D19A1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381128D417A021AF001D19A1 /* ViewController.xib */; };
-		381D178517A02414004F236C /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 381D178417A02414004F236C /* MBProgressHUD.bundle */; };
 		381D178817A0242B004F236C /* MMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 381D178717A0242B004F236C /* MMProgressHUD.m */; };
+		389B277917A0BFB4004DD015 /* MMProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 389B277817A0BFB4004DD015 /* MMProgressHUD.bundle */; };
+		389B277D17A0D536004DD015 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 389B277B17A0D536004DD015 /* icon.png */; };
+		389B277E17A0D536004DD015 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 389B277C17A0D536004DD015 /* icon@2x.png */; };
+		389B278017A0D708004DD015 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389B277F17A0D708004DD015 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +42,12 @@
 		381128D117A021AF001D19A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		381128D217A021AF001D19A1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		381128D517A021AF001D19A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		381D178417A02414004F236C /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		381D178617A0242B004F236C /* MMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUD.h; sourceTree = "<group>"; };
 		381D178717A0242B004F236C /* MMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUD.m; sourceTree = "<group>"; };
+		389B277817A0BFB4004DD015 /* MMProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MMProgressHUD.bundle; sourceTree = "<group>"; };
+		389B277B17A0D536004DD015 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		389B277C17A0D536004DD015 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		389B277F17A0D708004DD015 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				389B278017A0D708004DD015 /* QuartzCore.framework in Frameworks */,
 				381128BA17A021AF001D19A1 /* UIKit.framework in Frameworks */,
 				381128BC17A021AF001D19A1 /* Foundation.framework in Frameworks */,
 				381128BE17A021AF001D19A1 /* CoreGraphics.framework in Frameworks */,
@@ -61,6 +68,7 @@
 		381128AD17A021AF001D19A1 = {
 			isa = PBXGroup;
 			children = (
+				389B277A17A0D536004DD015 /* Resources */,
 				381D178317A02414004F236C /* MMProgressHUD */,
 				381128BF17A021AF001D19A1 /* MMProgressHUD Demo */,
 				381128B817A021AF001D19A1 /* Frameworks */,
@@ -79,6 +87,7 @@
 		381128B817A021AF001D19A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				389B277F17A0D708004DD015 /* QuartzCore.framework */,
 				381128B917A021AF001D19A1 /* UIKit.framework */,
 				381128BB17A021AF001D19A1 /* Foundation.framework */,
 				381128BD17A021AF001D19A1 /* CoreGraphics.framework */,
@@ -116,11 +125,20 @@
 		381D178317A02414004F236C /* MMProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				381D178417A02414004F236C /* MBProgressHUD.bundle */,
+				389B277817A0BFB4004DD015 /* MMProgressHUD.bundle */,
 				381D178617A0242B004F236C /* MMProgressHUD.h */,
 				381D178717A0242B004F236C /* MMProgressHUD.m */,
 			);
 			path = MMProgressHUD;
+			sourceTree = "<group>";
+		};
+		389B277A17A0D536004DD015 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				389B277B17A0D536004DD015 /* icon.png */,
+				389B277C17A0D536004DD015 /* icon@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,11 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				381128C417A021AF001D19A1 /* InfoPlist.strings in Resources */,
+				389B277E17A0D536004DD015 /* icon@2x.png in Resources */,
+				389B277D17A0D536004DD015 /* icon.png in Resources */,
 				381128CC17A021AF001D19A1 /* Default.png in Resources */,
 				381128CE17A021AF001D19A1 /* Default@2x.png in Resources */,
+				389B277917A0BFB4004DD015 /* MMProgressHUD.bundle in Resources */,
 				381128D017A021AF001D19A1 /* Default-568h@2x.png in Resources */,
 				381128D617A021AF001D19A1 /* ViewController.xib in Resources */,
-				381D178517A02414004F236C /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MMProgressHUD.h"
 
 @interface ViewController ()
 
@@ -19,6 +20,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
+- (IBAction)showHUDButtonAction:(id)sender
+{
+//    [MMProgressHUD showSuccessWithStatus:@"Loading..."];
+//    [MMProgressHUD dismissAfterDelay:3.f];
+//    
+    
+    
+    
+    [MMProgressHUD showErrorWithStatus:@"Loading..."];
+    [MMProgressHUD dismissAfterDelay:3.f];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
