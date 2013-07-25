@@ -109,7 +109,7 @@ CGFloat MMProgressHUDRingThickness = 6;
 
 - (UIView *)hudView
 {
-    if(!_hudView) {
+    if (!_hudView) {
         _hudView = [[UIView alloc] initWithFrame:CGRectZero];
         _hudView.bounds = CGRectMake(0.f, 0.f, 146.f, 146.f);
         _hudView.layer.cornerRadius = 2;
@@ -154,10 +154,10 @@ CGFloat MMProgressHUDRingThickness = 6;
 - (UIImageView *)imageView
 {
     if (_imageView == nil)
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 28, 28)];
-        _imageView.center = CGPointMake(CGRectGetWidth(self.hudView.bounds)/2, 36);
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 72, 72)];
+        _imageView.center = CGPointMake(CGRectGetWidth(self.hudView.bounds)/2, 52);
     
-    if(!_imageView.superview) {
+    if (!_imageView.superview) {
         [self.hudView addSubview:_imageView];
     }
     
@@ -186,41 +186,41 @@ CGFloat MMProgressHUDRingThickness = 6;
 - (UIImage *)hudSuccessImage
 {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 50000
-    if(_hudSuccessImage == nil) {
+    if (_hudSuccessImage == nil) {
         _hudSuccessImage = [[[self class] appearance] hudSuccessImage];
     }
     
-    if(_hudSuccessImage != nil) {
+    if (_hudSuccessImage != nil) {
         return _hudSuccessImage;
     }
 #endif
     
-    return [UIImage imageNamed:@"MMProgressHUD.bundle/success.png"];
+    return [UIImage imageNamed:@"MMProgressHUD.bundle/mmhud_success.png"];
 }
 
 - (UIImage *)hudErrorImage
 {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 50000
-    if(_hudErrorImage == nil) {
+    if (_hudErrorImage == nil) {
         _hudErrorImage = [[[self class] appearance] hudErrorImage];
     }
     
-    if(_hudErrorImage != nil) {
+    if (_hudErrorImage != nil) {
         return _hudErrorImage;
     }
 #endif
     
-    return [UIImage imageNamed:@"MMProgressHUD.bundle/error.png"];
+    return [UIImage imageNamed:@"MMProgressHUD.bundle/mmhud_error.png"];
 }
 
 - (UIColor *)hudBackgroundColor
 {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 50000
-    if(_hudBackgroundColor == nil) {
+    if (_hudBackgroundColor == nil) {
         _hudBackgroundColor = [[[self class] appearance] hudBackgroundColor];
     }
     
-    if(_hudBackgroundColor != nil) {
+    if (_hudBackgroundColor != nil) {
         return _hudBackgroundColor;
     }
 #endif
@@ -231,7 +231,7 @@ CGFloat MMProgressHUDRingThickness = 6;
 
 - (CAShapeLayer *)ringLayer
 {
-    if(!_ringLayer) {
+    if (!_ringLayer) {
         CGPoint center = CGPointMake(CGRectGetWidth(_hudView.frame)/2, CGRectGetHeight(_hudView.frame)/2);
         _ringLayer = [self createRingLayerWithCenter:center radius:MMProgressHUDRingRadius lineWidth:MMProgressHUDRingThickness color:[UIColor whiteColor]];
         [self.hudView.layer addSublayer:_ringLayer];
@@ -241,7 +241,7 @@ CGFloat MMProgressHUDRingThickness = 6;
 
 - (CAShapeLayer *)backgroundRingLayer
 {
-    if(!_backgroundRingLayer) {
+    if (!_backgroundRingLayer) {
         CGPoint center = CGPointMake(CGRectGetWidth(_hudView.frame)/2, CGRectGetHeight(_hudView.frame)/2);
         _backgroundRingLayer = [self createRingLayerWithCenter:center radius:MMProgressHUDRingRadius lineWidth:MMProgressHUDRingThickness color:[UIColor darkGrayColor]];
         _backgroundRingLayer.strokeEnd = 1;
@@ -277,6 +277,7 @@ CGFloat MMProgressHUDRingThickness = 6;
 {
     float x = (float)(radius * cos(angleInDegrees * M_PI / 180)) + radius;
     float y = (float)(radius * sin(angleInDegrees * M_PI / 180)) + radius;
+    
     return CGPointMake(x, y);
 }
 
@@ -288,9 +289,9 @@ CGFloat MMProgressHUDRingThickness = 6;
     
     [smoothedPath moveToPoint:startPoint];
     
-    CGFloat delta = 360.0f/sampleCount;
+    CGFloat delta = 360.0f / sampleCount;
     CGFloat angleInDegrees = -90;
-    for (NSInteger i=1; i<sampleCount; i++) {
+    for (NSInteger i = 1; i < sampleCount; i++) {
         angleInDegrees += delta;
         CGPoint point = [self pointOnCircleWithCenter:center radius:radius angleInDegrees:angleInDegrees];
         [smoothedPath addLineToPoint:point];
@@ -353,12 +354,10 @@ CGFloat MMProgressHUDRingThickness = 6;
     [self dismissAfterDelay:0.f];
 }
 
-
 + (void)dismissAfterDelay:(NSTimeInterval)delay
 {
     [[self sharedView] dismissAfterDelay:delay];
 }
-
 
 
 
@@ -368,7 +367,7 @@ CGFloat MMProgressHUDRingThickness = 6;
 - (void)showHudWithType:(MMProgressHUDType)type status:(NSString *)status
 {
     if (!self.overlayView.superview) {
-        NSEnumerator *frontToBackWindows = [[[UIApplication sharedApplication]windows]reverseObjectEnumerator];
+        NSEnumerator *frontToBackWindows = [[[UIApplication sharedApplication] windows] reverseObjectEnumerator];
         
         for (UIWindow *window in frontToBackWindows) {
             if (window.windowLevel == UIWindowLevelNormal) {
@@ -392,7 +391,7 @@ CGFloat MMProgressHUDRingThickness = 6;
     self.overlayView.hidden = NO;
     [self positionHUD:nil];
     
-    if(self.alpha != 1) {
+    if (self.alpha != 1) {
         self.hudView.transform = CGAffineTransformScale(self.hudView.transform, 1.3, 1.3);
         MMProgressHUD *__weak weakSelf=self;
         [UIView animateWithDuration:0.15
@@ -426,7 +425,7 @@ CGFloat MMProgressHUDRingThickness = 6;
 {
     [self cancelRingLayerAnimation];
     
-    if(![self.class isVisible]) {
+    if (![self.class isVisible]) {
         [self showHudWithType:MMProgressHUDSuccess status:status];
     }
     
@@ -461,8 +460,8 @@ CGFloat MMProgressHUDRingThickness = 6;
 - (void)dismissAfterDelay:(CGFloat)delay
 {
     self.activityCount = 0;
-    MMProgressHUD *__weak weakSelf=self;
-    [UIView animateWithDuration:0.15
+    MMProgressHUD *__weak weakSelf = self;
+    [UIView animateWithDuration:0.1f
                           delay:delay
                         options:UIViewAnimationCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
                      animations:^{
