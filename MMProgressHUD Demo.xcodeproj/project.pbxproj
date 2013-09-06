@@ -169,6 +169,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Lanvige Jiang";
+				TargetAttributes = {
+					381128B517A021AF001D19A1 = {
+						DevelopmentTeam = MZZM7675W5;
+					};
+				};
 			};
 			buildConfigurationList = 381128B117A021AF001D19A1 /* Build configuration list for PBXProject "MMProgressHUD Demo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -298,10 +303,13 @@
 		381128DA17A021AF001D19A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMProgressHUD Demo/MMProgressHUD Demo-Prefix.pch";
 				INFOPLIST_FILE = "MMProgressHUD Demo/MMProgressHUD Demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -309,10 +317,13 @@
 		381128DB17A021AF001D19A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMProgressHUD Demo/MMProgressHUD Demo-Prefix.pch";
 				INFOPLIST_FILE = "MMProgressHUD Demo/MMProgressHUD Demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
