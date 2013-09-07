@@ -21,18 +21,24 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (IBAction)showHUDButtonAction:(id)sender
+- (IBAction)showIndictorAction:(id)sender
 {
-//    [MMProgressHUD showSuccessWithStatus:@"Loading..."];
-//    [MMProgressHUD dismissAfterDelay:3.f];
-    
-    
-    
-    
-    [MMProgressHUD showErrorWithStatus:@"Loading..."];
-    [MMProgressHUD dismissAfterDelay:3.f];
+    [MMProgressHUD showIndicatorWithStatus:@"Loading..."];
+    [MMProgressHUD dismissAfterDelay:2.f];
 }
 
+
+- (IBAction)showSuccessAction:(id)sender
+{
+    [MMProgressHUD showSuccessWithStatus:@"Success!"];
+    [MMProgressHUD dismissAfterDelay:2.f];
+}
+
+- (IBAction)showFailureAction:(id)sender
+{
+    [MMProgressHUD showErrorWithStatus:@"Failure"];
+    [MMProgressHUD dismissAfterDelay:2.f];
+}
 
 
 - (void)didReceiveMemoryWarning

@@ -10,8 +10,12 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UIButton *showHUDButton;
+@property (nonatomic, weak) IBOutlet UIButton *showIndictorButton;
+@property (nonatomic, weak) IBOutlet UIButton *showSuccessButton;
+@property (nonatomic, weak) IBOutlet UIButton *showFailureButton;
 
-- (IBAction)showHUDButtonAction:(id)sender;
+- (IBAction)showIndictorAction:(id)sender;
+- (IBAction)showSuccessAction:(id)sender;
+- (IBAction)showFailureAction:(id)sender;
 
 @end
